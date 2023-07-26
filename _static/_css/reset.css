@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+     * {margin:0;padding:0;outline:none;cursor:default;list-style:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+     html {scroll-behavior:smooth;overflow:hidden;position:relative;width:100%;min-width:100%;min-height:100%;height:100%;word-break:break-all;-ms-word-break:break-all;}
+     body {font-size:12px;font-weight:400;line-height:1.5;font-family:'Fredoka', 'NanumSq', 'Noto Sans KR', sans-serif;-moz-font-family:'Fredoka', 'NanumSq', 'Noto Sans KR', sans-serif;color:#222;overflow:hidden;min-width:360px;min-height:100%;height:100%;text-align:left;background-color:transparent;-ms-user-select:none;-moz-user-select:-moz-none;-khtml-user-select:none;-webkit-user-select:none;user-select:none;}
+     a {text-decoration:none;color:#222;font-size:inherit;cursor:pointer;}
+     table {border-spacing:0;border-style:none;border-collapse:collapse;}
+     button {border:none;background:none;outline:none;cursor:pointer;font-family:'Fredoka', 'NanumSq', 'Noto Sans KR', sans-serif;}
+     /* body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldset,p,button {}
+     img,fieldset,iframe {border:0 none;}
+     a:hover,a:link,a:visited,a:active {text-decoration:none;} */
+
+     @font-face {
+          font-family: 'NanumSq';
+          src: local(''), local('NanumSquareLighter'),
+               url('../_font/NanumSquareLighter.woff2') format('woff2'),
+               url('../_font/NanumSquareLighter.woff') format('woff');
+          font-weight: 300;
+          font-style: normal;
+          font-display: swap;
+          ascent-override: 65%;
+          descent-override: 0%;
+     }
+
+     @font-face {
+          font-family: 'NanumSq';
+          src: local(''), local('NanumSquareRegular'),
+               url('../_font/NanumSquareRegular.woff2') format('woff2'),
+               url('../_font/NanumSquareRegular.woff') format('woff');
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+          ascent-override: 65%;
+          descent-override: 0%;
+     }
+
+     @font-face {
+          font-family: 'NanumSq';
+          src: local(''), local('NanumSquare_Bold'),
+               url('../_font/NanumSquare_Bold.woff2') format('woff2'),
+               url('../_font/NanumSquare_Bold.woff') format('woff');
+          font-weight: 700;
+          font-style: normal;
+          font-display: swap;
+          ascent-override: 65%;
+          descent-override: 0%;
+     }
+
+     @font-face {
+          font-family: 'NanumSq';
+          src: local(''), local('NanumSquare_EXBold'),
+               url('../_font/NanumSquare_EXBold.woff2') format('woff2'),
+               url('../_font/NanumSquare_EXBold.woff') format('woff');
+          font-weight: 800;
+          font-style: normal;
+          font-display: swap;
+          ascent-override: 65%;
+          descent-override: 0%;
+     }
