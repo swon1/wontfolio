@@ -15,8 +15,8 @@
      @font-face {
           font-family: 'NanumSq';
           src: local(''), local('NanumSquareLighter'),
-               url('../_font/NanumSquareLighter.woff2') format('woff2'),
-               url('../_font/NanumSquareLighter.woff') format('woff');
+               url('../font/NanumSquareLighter.woff2') format('woff2'),
+               url('../font/NanumSquareLighter.woff') format('woff');
           font-weight: 300;
           font-style: normal;
           font-display: swap;
@@ -27,8 +27,8 @@
      @font-face {
           font-family: 'NanumSq';
           src: local(''), local('NanumSquareRegular'),
-               url('../_font/NanumSquareRegular.woff2') format('woff2'),
-               url('../_font/NanumSquareRegular.woff') format('woff');
+               url('../font/NanumSquareRegular.woff2') format('woff2'),
+               url('../font/NanumSquareRegular.woff') format('woff');
           font-weight: 400;
           font-style: normal;
           font-display: swap;
@@ -39,8 +39,8 @@
      @font-face {
           font-family: 'NanumSq';
           src: local(''), local('NanumSquare_Bold'),
-               url('../_font/NanumSquare_Bold.woff2') format('woff2'),
-               url('../_font/NanumSquare_Bold.woff') format('woff');
+               url('../font/NanumSquare_Bold.woff2') format('woff2'),
+               url('../font/NanumSquare_Bold.woff') format('woff');
           font-weight: 700;
           font-style: normal;
           font-display: swap;
@@ -51,8 +51,8 @@
      @font-face {
           font-family: 'NanumSq';
           src: local(''), local('NanumSquare_EXBold'),
-               url('../_font/NanumSquare_EXBold.woff2') format('woff2'),
-               url('../_font/NanumSquare_EXBold.woff') format('woff');
+               url('../font/NanumSquare_EXBold.woff2') format('woff2'),
+               url('../font/NanumSquare_EXBold.woff') format('woff');
           font-weight: 800;
           font-style: normal;
           font-display: swap;
