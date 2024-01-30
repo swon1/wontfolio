@@ -115,6 +115,42 @@ function loadFunction(brCheck) {
                     }
                }
           });
+
+          let touchS, touchE;
+          $($section).on( 'touchstart', ( evt ) => {
+               evt.preventDefault();
+               touchS = evt.touches[0].pageY;
+          });
+          $($section).on( 'touchend', ( evt ) => {
+               evt.preventDefault();
+               let touT = evt.currentTarget;
+               let touNext = touT.nextElementSibling;
+               let touPrev = touT.previousElementSibling;
+               touchE = evt.changedTouches[0].pageY;
+
+               console.log(evt);
+
+               if ( $($section).is(":animated") || $($section).siblings('section').is(":animated") ) {
+                    return;
+               } else {
+                    if ( (touchS > touchE) && !(touNext == null) ) {
+                         $(touT).removeClass('active');
+                         $(touT).next().addClass('active').css({'z-index':'2'}).stop(true).animate({'opacity':'1'},s500, outQuad, () => {
+                              $(touT).css({'opacity':'0','z-index':'1'});
+                         });
+                         pTextNav.change($(touT).next().attr('data-name'));
+                         sidePageBar.active($(touT).next().attr('data-name'), 200);
+                    } else if ( (touchS < touchE) && !(touPrev == null) ) {
+                         $(touT).removeClass('active').css({'z-index':'1'});
+                         $(touT).prev().addClass('active').css({'z-index':'2'}).stop(true).animate({'opacity':'1'},s500, outQuad, () => {
+                              $(touT).css({'opacity':'0'});
+                         });
+                         pTextNav.change($(touT).prev().attr('data-name'));
+                         sidePageBar.active($(touT).prev().attr('data-name'), 200);
+                    }
+               }
+
+          });
      }
 
      // Side Nav
