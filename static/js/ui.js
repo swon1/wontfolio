@@ -116,6 +116,7 @@ function loadFunction(brCheck) {
                }
           });
 
+          /*
           let touchS, touchE;
           $($section).on( 'touchstart', ( evt ) => {
                evt.preventDefault();
@@ -127,8 +128,6 @@ function loadFunction(brCheck) {
                let touNext = touT.nextElementSibling;
                let touPrev = touT.previousElementSibling;
                touchE = evt.changedTouches[0].pageY;
-
-               console.log(evt);
 
                if ( $($section).is(":animated") || $($section).siblings('section').is(":animated") ) {
                     return;
@@ -151,6 +150,7 @@ function loadFunction(brCheck) {
                }
 
           });
+          */
      }
 
      // Side Nav
