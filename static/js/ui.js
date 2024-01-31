@@ -310,20 +310,20 @@ function loadFunction(brCheck) {
 
           const portPopStart = () => {
                let portPopBtn = a.querySelectorAll('#port .port-btn');
-               [].forEach.call( portPopBtn, ( el ) => { 
+               [].forEach.call( portPopBtn, ( el ) => {
                     el.addEventListener( "click", function () {
                          let popTarget = $(this).attr('data-target');
                          portPop.open(popTarget);
-                    }); 
-               }); 
+                    });
+               });
 
                let portExitBtn = a.querySelectorAll('#port .section-pop-exit');
-               [].forEach.call( portExitBtn, ( el ) => { 
+               [].forEach.call( portExitBtn, ( el ) => {
                     el.addEventListener( "click", function () {
                          let ExitTarget = $(this).parents('.sec-pop-inner').attr('id');
                          portPop.close(ExitTarget);
-                    }); 
-               }); 
+                    });
+               });
           };
           const portPop = {
                box : a.querySelector('.section-pop'),
@@ -372,6 +372,27 @@ function loadFunction(brCheck) {
           // };
           // btnC();
 
+          const moPagenation = () => {
+               let pnSection = a.querySelectorAll('#section > section');
+               let pnBtn = a.querySelectorAll('#page-bar');
+               [].forEach.call( pnBtn, ( el ) => {
+                    el.addEventListener('click', (e) => {
+                         let pnT = (e.target).getAttribute('data-target');
+                         if ( $(pnSection).is(":animated") || $(pnSection).siblings('section').is(":animated") ) {
+                              return;
+                         } else {
+                              $(pnT).addClass('active').css({'z-index':'2'}).stop(true).animate({'opacity':'1'},s500, outQuad, () => {
+                                   $(pnT).siblings().css({'opacity':'0','z-index':'1'});
+                              });
+                              pTextNav.change($(pnT).attr('data-name'));
+                              sidePageBar.active($(pnT).attr('data-name'), 200);
+                         }
+                    });
+               });
+          };
+          if ( brCheck == 'mobile' ) {
+               moPagenation();
+          }
      }
 
      mouseEvent();

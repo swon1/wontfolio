@@ -302,8 +302,8 @@
         #page-bar {top:auto;bottom:65px;left:50%;right:auto;transform:translateX(-50%) translateY(0);text-align:left;}
         #page-bar .pageBar {width:auto;height:40px;display:flex;flex-wrap:wrap;flex-direction:row;transition:.33s ease;transition-delay:0.25s;}
         #page-bar .pageBar li:first-child {margin-left:0;}
-        #page-bar .pageBar li {left:0;right:auto;width:12px;height:100%;margin:0 3px;}
-        #page-bar .pageBar li::after {content:'';top:auto;bottom:0;right:0;width:100%;height:30%;}
+        #page-bar .pageBar li {left:0;right:auto;width:20px;height:100%;margin:0 3px;}
+        #page-bar .pageBar li::after {content:'';top:auto;bottom:0;right:0;width:100%;height:50%;}
         #page-bar .pageBar li.active::after {width:100%;height:100%;}
         #page-bar .pageBar.white {margin-bottom:30px;}
         #page-bar .pageBar.white li::after {background-color:rgba(255,255,255,0.5);}
