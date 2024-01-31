@@ -318,20 +318,21 @@
         #info .content-inner {padding:0 15px;}
         section#info .content-inner {height:90%;}
         #info .content-inner article {width:100%;padding-top:0;}
-        #info article.content-peo {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;align-items:center;height:25%;}
-        #info .content-peo .peo-photo {width:25%;max-width:110px;height:auto;}
-        #info .content-peo .peo-detail {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;align-items:center;width:75%;padding-left:5%;}
+        #info article.content-peo {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;align-items:center;height:20%;}
+        #info .content-peo .peo-photo {width:20%;max-width:110px;height:auto;}
+        #info .content-peo .peo-detail {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;align-items:center;width:80%;padding:0 5% 0 10%;}
         #info .content-peo .peo-detail .detail-item {margin-top:0;}
         #info .content-peo .peo-detail .detail-item p {font-size:12px;}
         #info .content-peo .peo-detail .detail-item p strong {display:block;margin-bottom:3px;}
-        #info article.content-ee {width:45%;height:43%;margin-bottom:7.5%;overflow-y:scroll;}
+        #info article.content-ee {position:relative;width:45%;height:40%;margin-bottom:7.5%;overflow-y:scroll;}
         #info article.content-ee.c-education {width:55%;padding-right:5%;}
         #info .content-ee .ex-education {overflow:hidden;}
         #info .content-ee .ex-sub-tit {font-size:14px;}
         #info .content-ee .ex-detail-list {overflow-y:scroll;}
         #info .content-ee .ex-detail-list dt {font-size:12px;}
-        #info .content-ee .ex-detail-list dd {font-size:10px;}
-        #info article.content-hobby {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:flex-start;height:27.5%;}
+        #info .content-ee .ex-detail-list dd {font-size:9px;}
+        #info .content-ee .ex-detail-list dd:last-child {margin-bottom:0;}
+        #info article.content-hobby {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:flex-start;height:35%;}
         #info .content-hobby .hobby-sub-tit {font-size:14px;}
         #info .content-hobby .hobby-detail-list li {margin-bottom:10px;}
         #info .content-hobby .hobby-detail-list .hobby-icon {width:15px;}
