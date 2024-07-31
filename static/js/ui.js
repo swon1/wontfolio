@@ -287,6 +287,8 @@ function loadFunction(brCheck) {
           let audio = $('.audio button').children();
           let audioPop = a.querySelector('.toAudio');
 
+          let isDown = false;
+
           // setTimeout( () => {
           //      $(audioPop).addClass('view').parents(pop.box).css({'display':'block'}).stop();
           //      gsap.to(pop.box, .85, { opacity : 1, ease : outQuart });
@@ -312,8 +314,10 @@ function loadFunction(brCheck) {
                let portPopBtn = a.querySelectorAll('#port .port-btn');
                [].forEach.call( portPopBtn, ( el ) => {
                     el.addEventListener( "click", function () {
-                         let popTarget = $(this).attr('data-target');
-                         portPop.open(popTarget);
+                         if ( !(isDown) ) {
+                              let popTarget = $(this).attr('data-target');
+                              portPop.open(popTarget);
+                         }
                     });
                });
 
@@ -390,9 +394,61 @@ function loadFunction(brCheck) {
                     });
                });
           };
-          if ( brCheck == 'mobile' ) {
-               moPagenation();
-          }
+
+          // if ( brCheck == 'mobile' ) {
+          //      moPagenation();
+          // }
+          const pcScrollFn = () => {
+               const scrollEl = document.querySelectorAll('#port .port-box');
+               const mouseScroll = function ( ele ) {
+                    const scrollTarget = ele;
+                    let startX;
+                    let scrollLeft;
+                    let moved;
+                    let tarEl;
+        
+                    const scrollStartFn = function (el,e) {
+                        el.classList.add('active');
+                        startX = e.pageX - el.offsetLeft;
+                        scrollLeft = el.scrollLeft;
+                        moved = true;
+                        window.addEventListener('mousemove', (e) => { scrollMoveFn(el,e) });
+                        window.addEventListener('mouseup', (e) => { scrollEndFn(el,e) });
+                    };
+                    const scrollMoveFn = function (el,e) {
+                        if ( !moved ) { return; }
+                        el = tarEl;
+                        isDown = true;
+                        const x = e.pageX - el.offsetLeft;
+                        const walk = x - startX;
+                        el.scrollLeft = scrollLeft - walk;
+                    };
+                    const scrollEndFn = function (el,e) {
+                        tarEl.classList.remove('active');
+        
+                        window.removeEventListener('mousemove',scrollMoveFn);
+                        window.removeEventListener('mouseup',scrollEndFn);
+                        el.removeEventListener('mousedown',scrollStartFn);
+        
+                        moved = false;
+        
+                        setTimeout(function(){
+                            isDown = false;
+                        },50);
+                    };
+                    const eventFn = function () {
+                        [].forEach.call( scrollTarget, ( el ) => {
+                            el.addEventListener('mousedown', (e) => {
+                                tarEl = el;
+                                scrollStartFn(tarEl,e);
+                            });
+                        });
+                    };
+                    eventFn();
+               };
+               mouseScroll(scrollEl);
+          };
+          ( brCheck == 'mobile' ) ? moPagenation() : pcScrollFn();
      }
 
      mouseEvent();
